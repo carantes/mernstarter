@@ -1,0 +1,73 @@
+{
+  "name": "mern-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for isomorphic React app (MERN)",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=development nodemon src/index.js",
+    "start:prod": "cross-env NODE_ENV=production node src/index.js",
+    "lint": "eslint src/client src/server",
+    "test": "cross-env NODE_ENV=test node_modules/.bin/mocha src/**/*.spec.js --compilers js:babel-register",
+    "watch:test": "npm run test -- --reporter min --watch",
+    "cover": "nyc npm run test",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "keywords": [],
+  "author": "Carlos Arantes <carantes.ferreira@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-webpack-loaders": "^0.7.1",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-es2015-native-modules": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "chai": "^3.5.0",
+    "cross-env": "^2.0.1",
+    "eslint": "^2.11.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.3.0",
+    "eslint-plugin-react": "^5.1.1",
+    "expect": "^1.20.2",
+    "mocha": "^3.0.2",
+    "nodemon": "^1.9.2",
+    "nyc": "^8.1.0",
+    "pre-commit": "^1.1.3",
+    "react-addons-test-utils": "^15.3.1",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "1.13.2",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "1.15.1",
+    "webpack-externals-plugin": "^1.0.0",
+    "webpack-hot-middleware": "^2.10.0",
+    "webpack-manifest-plugin": "^1.0.1"
+  },
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  },
+  "nyc": {
+    "include": [
+      "src/client/**/*.js",
+      "src/server/**/*.js"
+    ],
+    "exclude": [
+      "**/*.spec.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
+    ]
+  }
+}
