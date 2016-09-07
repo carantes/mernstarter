@@ -16,4 +16,4 @@ function cb(err) {
   return console.log('Listening at http://localhost:3000/') // eslint-disable-line no-console
 }
 
-devServer.listen(3000, 'localhost', cb);
+devServer.listen(3000, 'localhost', cb)
