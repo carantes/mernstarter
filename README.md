@@ -1,7 +1,7 @@
 Boilerplate para aplicações MERN
 =====================
 
-### Usage
+### Instalação
 
 ```
 npm install
@@ -11,17 +11,66 @@ open http://localhost:3000
 
 ### Auto Reload
 
-Your changes will appear without reloading the browser like in [this video](http://vimeo.com/100010922).
+* [React Hot Loader] (https://www.npmjs.com/package/react-hot-loader)
+* [Nodemon script monitor] (https://www.npmjs.com/package/nodemon)
+
+Alterações no CLIENT serão automaticamente recarregadas no BROWSER conforme [este video](http://vimeo.com/100010922).
+Alterações no SERVER causarão um restart automático do script do NODE
+
+### DevTools
+
+* [DevTools](https://github.com/gaearon/redux-devtools#overview)
+* [Log Monitor](https://github.com/gaearon/redux-devtools-log-monitor)
+* [Dock Monitor](https://github.com/gaearon/redux-devtools-dock-monitor)
+
+```
+CTRL + H (Enable/Disable DevTools)
+```
 
 ### Linting
 
-This boilerplate project includes React-friendly ESLint configuration.
+* [AirBNB JavaScript Style Guide](https://github.com/airbnb/javascript)
+* React-friendly ESLint configuration.
+* [Accessibility checker for A11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
 
 ```
 npm run lint
 ```
 
-### Dependencies
+### Testes
+
+* [Mocha Tests Runner](https://mochajs.org/)
+* [Chai Assertion Library](http://chaijs.com/api/bdd/)
+
+* Testes unitários / Testes unitários com auto reload
+```
+npm test
+npm run watch:test
+```
+
+* Gerar relatório de cobertura de testes / Verificar cobertura
+```
+npm run cover
+```
+
+### Pré-Commit
+
+* Hook do GIT que verifica a cada checkin se os scripts de LINT e TESTES foram executados sem erros (package.json)
+
+```
+"pre-commit": [
+    "lint",
+    "test"
+  ],
+```
+
+### Build
+```
+npm run build
+npm run build:prod
+```
+
+### Dependencias
 
 * React
 * Webpack
@@ -29,7 +78,7 @@ npm run lint
 * [babel-loader](https://github.com/babel/babel-loader)
 * [react-hot-loader](https://github.com/gaearon/react-hot-loader)
 
-### Resources
+### Referencias
 
 * [Demo video](http://vimeo.com/100010922)
 * [react-hot-loader on Github](https://github.com/gaearon/react-hot-loader)
@@ -37,5 +86,8 @@ npm run lint
 * [Troubleshooting guide](https://github.com/gaearon/react-hot-loader/blob/master/docs/Troubleshooting.md)
 * Ping dan_abramov on Twitter or #reactjs IRC
 
-airBNB JavaScript Style Guide
-https://github.com/airbnb/javascript
+
+
+### Changelog
+
+* v1.0 - Setup inicial

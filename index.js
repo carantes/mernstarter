@@ -16,12 +16,12 @@ if (process.env.NODE_ENV === 'production') {
             [
                 "babel-plugin-webpack-loaders",
                 {
-                "config": "webpack.config.js",
-                "verbose": false
+                    "config": "./webpack.config.babel.js",
+                    "verbose": false
                 }
             ]
         ]
     });
     require('babel-polyfill')
-    require('./server/server')
+    require('./src/server/server')
 }
