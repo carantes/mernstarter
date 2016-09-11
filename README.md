@@ -41,6 +41,7 @@ npm run lint
 
 * [Mocha Tests Runner](https://mochajs.org/)
 * [Chai Assertion Library](http://chaijs.com/api/bdd/)
+* [AIRBNB Enzyme Test Utils](https://github.com/airbnb/enzyme)
 
 * Testes unitários / Testes unitários com auto reload
 ```

@@ -15,8 +15,10 @@ import { toggleAddPost } from './AppActions'
 class App extends Component {
   constructor(props, context) {
     super(props)
-    this.state = { isMounted: false }
-    this.headerIsActive = context.router.isActive('/', true)
+    this.state = {
+      isMounted: false,
+      headerIsActive: context.router.isActive('/', true)
+    }
   }
 
   componentDidMount() {
@@ -34,7 +36,7 @@ class App extends Component {
         <div>
           <Header
             toggleAddPost={this.toggleAddPostSection.bind(this)}
-            isActive={this.headerIsActive}
+            isActive={this.state.headerIsActive}
           />
           <div className={styles.container}>
             {this.props.children}

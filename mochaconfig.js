@@ -3,6 +3,7 @@
 */
 
 process.env.NODE_ENV = 'test';
+process.env.PORT = '3000';
 
 function noop() {
   return null;
