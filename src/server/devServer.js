@@ -1,23 +1,14 @@
+// Webpack Requirements
 import webpack from 'webpack'
-import WebpackDevServer from 'webpack-dev-server'
 import config from '../../webpack.config'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
 
-export default (PORT) => {
-  const server = new WebpackDevServer(webpack(config), {
-    publicPath: config.output.publicPath,
-    hot: true,
-    historyApiFallback: true,
-    inline: true,
-    quiet: false,
-    noInfo: true,
-    stats: { colors: true }
-  })
-
-  server.listen(PORT, 'localhost', (err) => {
-    if (err) {
-      return console.log(err) // eslint-disable-line no-console
-    }
-
-    return console.log(`WebPack DevServer listening at http://localhost:${PORT}/`) // eslint-disable-line no-console
-  })
+function devServer(app) {
+  const compiler = webpack(config)
+  app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
+  app.use(webpackHotMiddleware(compiler))
+  return app
 }
+
+export default devServer

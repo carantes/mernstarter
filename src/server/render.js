@@ -1,6 +1,6 @@
 
 // React And Redux Setup
-import { configureStore } from '../../client/store'
+import { configureStore } from '../client/store'
 import { Provider } from 'react-redux'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
@@ -8,8 +8,8 @@ import { match, RouterContext } from 'react-router'
 import Helmet from 'react-helmet'
 
 // Import required modules
-import routes from '../../client/routes'
-import { fetchComponentData } from '../util/fetchData'
+import routes from '../client/routes'
+import { fetchComponentData } from './util/fetchData'
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {
@@ -56,7 +56,7 @@ const renderError = err => {
   return renderFullPage(`Server Error${errTrace}`, {})
 }
 
-const routeMatch = (req, res, next) => {
+export const serverRender = (req, res, next) => {
   match({ routes, location: req.url }, (err, redirectLocation, renderProps) => {
     if (err) {
       return res.status(500).end(renderError(err))
@@ -89,5 +89,3 @@ const routeMatch = (req, res, next) => {
       .catch((error) => next(error))
   })
 }
-
-export default routeMatch

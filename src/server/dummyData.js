@@ -1,6 +1,6 @@
-import Post from './models/post'
+import Post from './modules/Posts/post.model'
 
-export default function () {
+export default function dummyData() {
   Post.count().exec((err, count) => {
     if (count > 0) {
       return
@@ -39,7 +39,7 @@ export default function () {
 
     Post.create([post1, post2], (error) => {
       if (!error) {
-        // console.log('ready to go....');
+        // console.log('ready to go....')
       }
     })
   })

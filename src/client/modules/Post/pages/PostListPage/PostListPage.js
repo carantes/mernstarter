@@ -40,6 +40,17 @@ class PostListPage extends Component {
   }
 }
 
+// Actions required to provide data for this component to render in sever side.
+PostListPage.need = [() => { return fetchPosts() }]
+
+// Retrieve data from store as props
+function mapStateToProps(state) {
+  return {
+    showAddPost: getShowAddPost(state),
+    posts: getPosts(state),
+  }
+}
+
 PostListPage.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -50,15 +61,8 @@ PostListPage.propTypes = {
   dispatch: PropTypes.func.isRequired
 }
 
-// Actions required to provide data for this component to render in sever side.
-PostListPage.need = [() => { return fetchPosts() }]
-
-// Retrieve data from store as props
-function mapStateToProps(state) {
-  return {
-    showAddPost: getShowAddPost(state),
-    posts: getPosts(state),
-  }
+PostListPage.contextTypes = {
+  router: React.PropTypes.object,
 }
 
 export default connect(mapStateToProps)(PostListPage)

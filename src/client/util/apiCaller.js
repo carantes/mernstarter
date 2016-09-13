@@ -1,9 +1,7 @@
 import fetch from 'isomorphic-fetch'
-import getAPIURL from './apiURL'
+import { API_URL } from './apiURL'
 
 export default function callApi(endpoint, method = 'get', body) {
-  const API_URL = getAPIURL()
-
   return fetch(`${API_URL}/${endpoint}`, {
     headers: { 'content-type': 'application/json' },
     method,

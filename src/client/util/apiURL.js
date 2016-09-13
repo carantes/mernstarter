@@ -1,15 +1,6 @@
 
-function getAPIURL() {
-  const ENV = process.env.NODE_ENV
-  let url
+const PORT = process.env.PORT || 3000
 
-  if (ENV === 'development') {
-    url = '/api'
-  } else {
-    url = ENV === 'test' ? (process.env.BASE_URL || `http://localhost:${process.env.PORT}/api`) : '/api'
-  }
-
-  return url
-}
-
-export default getAPIURL
+export const API_URL = (typeof window === 'undefined' || process.env.NODE_ENV === 'test') ?
+  process.env.BASE_URL || (`http://localhost:${PORT}/api`) :
+  '/api'
