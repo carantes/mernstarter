@@ -31,11 +31,19 @@ CTRL + H (Enable/Disable DevTools)
 
 * [AirBNB JavaScript Style Guide](https://github.com/airbnb/javascript)
 * React-friendly ESLint configuration.
-* [Accessibility checker for A11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
 
 ```
 npm run lint
 ```
+
+### Accessibility plugin for REACT
+
+```
+import a11y from 'react-a11y'
+```
+
+https://www.youtube.com/watch?v=z5e7kWSHWTg#t=631
+
 
 ### Testes
 

@@ -20,15 +20,14 @@ logger.info({ ENV, PORT, MONGO_URL }, 'Defaults')
 // Initialize the Express App
 const app = new Express()
 
-// Run Webpack dev server in development mode
 if (ENV === 'development') {
-  devServer(app)
+  devServer(app) //Webpack dev server
 }
 
 // MongoDB
 mongoose.Promise = global.Promise
 mongoose.connect(MONGO_URL, (error) => {
-  if (error == null) {
+  if (error) {
     logger.error('Please make sure Mongodb is installed and running!')
   }
 
