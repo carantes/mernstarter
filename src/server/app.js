@@ -21,7 +21,7 @@ logger.info({ ENV, PORT, MONGO_URL }, 'Defaults')
 const app = new Express()
 
 if (ENV === 'development') {
-  devServer(app) //Webpack dev server
+  devServer(app) // Webpack dev server
 }
 
 // MongoDB

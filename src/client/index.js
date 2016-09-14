@@ -7,7 +7,7 @@ import a11y from 'react-a11y'
 
 // Accessibility Plugin
 if (process.env.NODE_ENV === 'development') {
-  a11y(React);
+  a11y(React)
 }
 
 // Initialize store
