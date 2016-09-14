@@ -13,7 +13,7 @@ const Header = (props) => {
         </h1>
         {
           props.isActive
-            ? <a className={styles['add-post-button']} href="#" onClick={props.toggleAddPost}>Adicionar Post</a>
+            ? <a className={styles['add-post-button']} href="#" role="button" onClick={props.toggleAddPost}>Adicionar Post</a>
             : null
         }
       </div>

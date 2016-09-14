@@ -4,8 +4,7 @@
   ],
   "parser": "babel-eslint",
   "plugins": [
-    "react",
-    "jsx-a11y"
+    "react"
   ],
   "env": {
     "browser": true,

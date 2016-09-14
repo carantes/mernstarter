@@ -3,6 +3,12 @@ import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import App from './App'
 import { configureStore } from './store'
+import a11y from 'react-a11y'
+
+// Accessibility Plugin
+if (process.env.NODE_ENV === 'development') {
+  a11y(React)
+}
 
 // Initialize store
 const store = configureStore(window.__INITIAL_STATE__)
