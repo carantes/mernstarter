@@ -20,7 +20,7 @@ module.exports = {
   output: {
     path: __dirname,
     filename: 'app.js',
-    publicPath: 'http://0.0.0.0:3000/',
+    publicPath: 'http://localhost:4000/',
   },
 
   resolve: {
