@@ -14,7 +14,8 @@
     "slate": "rimraf node_modules && npm install",
     "build": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=production webpack --config webpack.config.prod.js",
     "build:server": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=production webpack --config webpack.config.server.js",
-    "bs": "npm run clean && npm run build && npm run build:server && npm run start:prod"
+    "bs": "npm run clean && npm run build && npm run build:server && npm run start:prod",
+    "doc": "./node_modules/apidoc/bin/apidoc -i ./src/server/"
   },
   "pre-commit": [
     "lint",
@@ -24,6 +25,7 @@
   "author": "Carlos Arantes <carantes.ferreira@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "apidoc": "^0.16.1",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.9.1",
     "babel-eslint": "^6.0.4",
@@ -115,5 +117,9 @@
     ],
     "all": true,
     "check-coverage": true
+  },
+  "apidoc": {
+    "title": "MEAN API Documentation",
+    "url" : "https://api.github.com/v1"
   }
 }

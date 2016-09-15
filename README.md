@@ -79,6 +79,17 @@ npm run build
 npm run build:prod
 ```
 
+### API Documentation
+
+```
+npm run doc
+open ./doc/index.html
+```
+
+* [Getting Started](http://apidocjs.com/#getting-started)
+* [How to use](https://speakerdeck.com/rottmann/api-documentation)
+
+
 ### Dependencias
 
 * React

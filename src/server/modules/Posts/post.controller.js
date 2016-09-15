@@ -4,10 +4,32 @@ import slug from 'limax'
 import sanitizeHtml from 'sanitize-html'
 
 /**
- * Get all posts
- * @param req
- * @param res
- * @returns void
+ * @api {get} /posts List of Posts
+ * @apiName GetPosts
+ * @apiGroup Post
+ * @apiVersion 0.1.0
+ *
+ * @apiSuccess {String} name Author.
+ * @apiSuccess {String} title  Title of Post.
+ * @apiSuccess {String} content Content of Post.
+ * @apiSuccess {Date} dateAdded Post date.
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *      "posts":[
+ *        {
+ *          "_id":"57d5805dbf9936a627468a69",
+ *          "name":"Admin",
+ *          "title":"Lorem Ipsum",
+ *          "slug":"lorem-ipsum",
+ *          "cuid":"cikqgkv4q01ck7453ualdn3hf",
+ *          "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+ *          "__v":0,
+ *          "dateAdded":"2016-09-11T16:03:41.168Z"
+ *        }
+ *      ]
+ *   }
  */
 export function getPosts(req, res) {
   Post.find().sort('-dateAdded').exec((err, posts) => {
